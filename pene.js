@@ -10,7 +10,7 @@ class mascota {
   constructor(name, hambre, aburrimiento, sueno) {
     this.name = name;
     this.hambre = hambre;
-    this.aburrimiento = aburrimiento;
+    this.aburrimiento = aburrimiento; 
     this.sueno = sueno;
   }
 }
@@ -38,13 +38,43 @@ rl.question('¿Cómo se va a llamar tu tamagochi uwu? ', (name) => {
   function interactuar() {
     rl.question('¿Qué quieres hacer con tu tamagochi? ("alimentar", "dormir", "jugar", "finalizar") ', (action) => {
       if (action === "alimentar") {
-
+        
+        
+        tamagochi.hambre = tamagochi.hambre +1 ; 
+        fs.writeFile('estado.txt', `${tamagochi.hambre}, aburrimiento=${tamagochi.aburrimiento}, sueño=${tamagochi.sueno}\n`, (error) => {
+          if (error) {
+            console.log( "error");
+          }
+        }
+      
+      
+      )
         console.log("tu tamagochi esta comiendo :) ");
 
       } else if (action === "dormir") {
+         tamagochi.sueno = tamagochi.sueno +1 ; 
+        fs.writeFile('estado.txt', `${tamagochi.hambre}, aburrimiento=${tamagochi.aburrimiento}, sueño=${tamagochi.sueno}\n`, (error) => {
+          if (error) {
+            console.log( "error");
+          }
+        }
+      
+      
+      )
+        
         console.log("tu tamagochi esta durmiendo :) ");
 
       } else if (action === "jugar") {
+
+         tamagochi.aburrimiento = tamagochi.aburrimiento +1 ; 
+        fs.writeFile('estado.txt', `${tamagochi.hambre}, aburrimiento=${tamagochi.aburrimiento}, sueño=${tamagochi.sueno}\n`, (error) => {
+          if (error) {
+            console.log( "error");
+          }
+        }
+      
+      
+      )
 
         console.log("estas jugando con tu tamagochi :) ");
 
