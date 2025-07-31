@@ -1,1 +1,1 @@
-51, aburrimiento=30, sueño=52
+51, aburrimiento=30, sueño=50

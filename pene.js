@@ -36,7 +36,7 @@ rl.question('¿Cómo se va a llamar tu tamagochi uwu? ', (name) => {
 
  
   function interactuar() {
-    rl.question('¿Qué quieres hacer con tu tamagochi? ("alimentar", "dormir", "jugar", "finalizar") ', (action) => {
+    rl.question('¿Qué quieres hacer con tu tamagochi? ("alimentar", "dormir", "jugar", ,"consultar" "finalizar") ', (action) => {
       if (action === "alimentar") {
         
         
@@ -85,7 +85,14 @@ rl.question('¿Cómo se va a llamar tu tamagochi uwu? ', (name) => {
 
         rl.close();
         return;
-      } else {
+      } 
+        else if (action === "consultar") {
+      
+          console.log(` Hambre = ${tamagochi.hambre}, Aburrimiento = ${tamagochi.aburrimiento}, Sueno =  ${tamagochi.sueno} `);
+      }
+
+
+      else {
         console.log("acción no válida");
       }
 
